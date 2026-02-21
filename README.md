@@ -1,3 +1,4 @@
 ﻿# modulosOdoo
 
-Tiene' que tlabajal
+Tiene' que tlabaja'
+
