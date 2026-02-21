@@ -1,4 +1,5 @@
 ﻿# modulosOdoo
 
-Tiene' que tlabaja'
+Tiene' cle tlabaja'
+
 
