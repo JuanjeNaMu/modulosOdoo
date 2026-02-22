@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <!-- Vista de lista (ANTES era 'tree', AHORA es 'list') -->
+        <!-- Vista de lista -->
         <record id="view_videoclub_pelicula_list" model="ir.ui.view">
             <field name="name">videoclub.pelicula.list</field>
             <field name="model">videoclub.pelicula</field>
             <field name="arch" type="xml">
                 <list>
-                    <field name="name"/>
+                    <field name="titulo"/>
                     <field name="director"/>
-                    <field name="anio"/>
+                    <field name="anyo"/>
+                    <field name="genero"/>
+                    <field name="disponible"/>
                 </list>
             </field>
         </record>
@@ -22,12 +24,35 @@
                 <form>
                     <sheet>
                         <group>
-                            <field name="name"/>
+                            <field name="titulo"/>
                             <field name="director"/>
-                            <field name="anio"/>
+                            <field name="anyo"/>
+                            <field name="genero"/>
+                            <field name="duracion"/>
+                            <field name="duracion_horas" readonly="1"/>
+                            <field name="precio"/>
+                            <field name="disponible"/>
+                        </group>
+                        <group>
+                            <field name="sinopsis" widget="html"/>
+                            <field name="caratula" widget="image"/>
                         </group>
                     </sheet>
                 </form>
+            </field>
+        </record>
+
+        <!-- Vista de búsqueda -->
+        <record id="view_videoclub_pelicula_search" model="ir.ui.view">
+            <field name="name">videoclub.pelicula.search</field>
+            <field name="model">videoclub.pelicula</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="titulo"/>
+                    <field name="director"/>
+                    <field name="genero"/>
+                    <filter name="disponibles" string="Disponibles" domain="[('disponible','=',True)]"/>
+                </search>
             </field>
         </record>
 
@@ -36,6 +61,11 @@
             <field name="name">Películas</field>
             <field name="res_model">videoclub.pelicula</field>
             <field name="view_mode">list,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    ¡Crea tu primera película!
+                </p>
+            </field>
         </record>
 
         <!-- Menú -->
