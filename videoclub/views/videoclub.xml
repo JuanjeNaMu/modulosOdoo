@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Vista de lista (tree) -->
+        <record id="view_videoclub_pelicula_tree" model="ir.ui.view">
+            <field name="name">videoclub.pelicula.tree</field>
+            <field name="model">videoclub.pelicula</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="director"/>
+                    <field name="anio"/>
+                    <field name="genero"/>
+                    <field name="disponible"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Vista de formulario (form) -->
+        <record id="view_videoclub_pelicula_form" model="ir.ui.view">
+            <field name="name">videoclub.pelicula.form</field>
+            <field name="model">videoclub.pelicula</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="director"/>
+                            <field name="anio"/>
+                            <field name="genero"/>
+                            <field name="duracion"/>
+                            <field name="duracion_horas" readonly="1"/>
+                            <field name="disponible"/>
+                            <field name="caratula" widget="image"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Vista de búsqueda -->
+        <record id="view_videoclub_pelicula_search" model="ir.ui.view">
+            <field name="name">videoclub.pelicula.search</field>
+            <field name="model">videoclub.pelicula</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="director"/>
+                    <field name="genero"/>
+                    <filter name="disponibles" string="Disponibles" domain="[('disponible','=',True)]"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- Acción -->
+        <record id="action_videoclub_pelicula" model="ir.actions.act_window">
+            <field name="name">Películas</field>
+            <field name="res_model">videoclub.pelicula</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    ¡Crea tu primera película!
+                </p>
+            </field>
+        </record>
+
+        <!-- Menú -->
+        <menuitem id="menu_videoclub_root" name="Videoclub" sequence="10"/>
+        <menuitem id="menu_videoclub_peliculas" name="Películas" 
+                  parent="menu_videoclub_root" 
+                  action="action_videoclub_pelicula" sequence="20"/>
+    </data>
+</odoo>

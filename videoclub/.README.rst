@@ -1,0 +1,23 @@
+=========
+Videoclub
+=========
+
+Módulo para gestionar un videoclub.
+
+Características
+===============
+* Gestión de películas
+* Control de disponibilidad
+* Búsqueda por título, director y género
+
+Instalación
+===========
+1. Copiar la carpeta 'videoclub' en addons
+2. Actualizar lista de aplicaciones
+3. Instalar el módulo
+
+Uso
+===
+* Ir a Videoclub > Películas
+* Crear, editar y eliminar películas
+* Filtrar por disponibles

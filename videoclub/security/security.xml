@@ -1,0 +1,3 @@
+<record id="videoclub_jefe" model="res.groups">
+    <field name="name">Videoclub / Jefe</field>
+</record>
