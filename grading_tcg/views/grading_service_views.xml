@@ -1,0 +1,12 @@
+<odoo>
+    <record id="view_grading_service_tree" model="ir.ui.view">
+        <field name="name">grading.service.tree</field>
+        <field name="model">grading.service</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="price"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # from odoo import http
 
 
@@ -18,4 +19,3 @@
 #         return http.request.render('mi_modulo.object', {
 #             'object': obj
 #         })
-
